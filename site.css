@@ -713,3 +713,5 @@ button{background:none;border:0;padding:0;cursor:pointer}
 .foot nav{font-size:13px}
 .menu-x{display:block;text-align:center;margin-top:14px;font-family:var(--titel);font-size:15px;line-height:1;opacity:.4}
 .erzaehlt{margin-top:48px;font-size:14px;color:var(--soft)}
+.foot{padding-top:48px}
+.foot .logo-n{display:block;width:34px;height:34px;margin:0 auto 16px;color:var(--ink)}
