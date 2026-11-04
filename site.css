@@ -707,3 +707,9 @@ button{background:none;border:0;padding:0;cursor:pointer}
 .foot .sub,.foot nav,.foot .von{color:var(--soft)}
 .foot nav a:hover{color:var(--erde)}
 .folge.aus-liebe .folge-kopf .rub-gross{color:#D9B99A}
+/* Schmaler Fuß, kleines x im Menü, Absender nur im Impressum */
+.foot{margin-top:72px;padding:28px var(--gr) calc(22px + env(safe-area-inset-bottom,0px)) var(--gl)}
+.foot .logo{width:28px;height:28px;margin:0 auto 12px}
+.foot nav{font-size:13px}
+.menu-x{display:block;text-align:center;margin-top:14px;font-family:var(--titel);font-size:15px;line-height:1;opacity:.4}
+.erzaehlt{margin-top:48px;font-size:14px;color:var(--soft)}
