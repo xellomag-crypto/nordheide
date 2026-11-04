@@ -715,3 +715,17 @@ button{background:none;border:0;padding:0;cursor:pointer}
 .erzaehlt{margin-top:48px;font-size:14px;color:var(--soft)}
 .foot{padding-top:48px}
 .foot .logo-n{display:block;width:34px;height:34px;margin:0 auto 16px;color:var(--ink)}
+/* Kopf: Wortmarke links, größer, mehr Luft */
+.bar{height:calc(72px + env(safe-area-inset-top,0px))}
+.bar .center{position:static;transform:none}
+.bar .center .wort{font-size:24px}
+.bar .side.l{display:none}
+.menu .top{height:72px}
+.menu .top .center{position:static;transform:none}
+.menu .top .center .wort{font-size:24px}
+.menu .close{width:44px;height:44px;font-size:34px;font-weight:300;line-height:1;opacity:.85;text-align:right;font-family:var(--titel)}
+/* Menüpunkte: Block in der Mitte, Zeilen linksbündig, so groß wie die Wortmarke oder größer */
+.menu ol{text-align:left;width:fit-content;margin:0 auto}
+.menu li a{font-size:30px;padding:9px 0}
+@media (min-width:1024px){.bar .center .wort,.menu .top .center .wort{font-size:28px}.menu li a{font-size:38px}}
+.menu .top .center .wort{font-family:var(--titel);font-size:26px}
