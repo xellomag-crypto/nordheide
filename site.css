@@ -734,3 +734,4 @@ button{background:none;border:0;padding:0;cursor:pointer}
 .menu .top .center .wort{font-size:26px}
 @media (min-width:1024px){.menu li a{font-size:24px}.menu .top .center .wort{font-size:28px}}
 .burger{opacity:1;width:44px;height:44px;align-items:flex-end;gap:7px}.burger i{height:2px;width:28px;border-radius:1px}
+.foot .insta{display:block;width:44px;height:44px;margin:0 auto 6px;padding:11px;color:var(--ink);opacity:.8}.foot .insta svg{display:block;width:22px;height:22px}.foot .insta:hover{opacity:1;color:var(--erde)}
