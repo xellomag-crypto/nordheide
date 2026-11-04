@@ -691,3 +691,12 @@ button{background:none;border:0;padding:0;cursor:pointer}
  .kap-lead .full{aspect-ratio:3/2}
  .kap-kopf h2{font-size:72px}
 }
+
+/* Menü: Punkte zentriert und dezent, ohne Linien */
+.menu ol{border-top:0;text-align:center}
+.menu li a{display:block;justify-content:center;border-bottom:0;padding:11px 0;font-family:var(--titel);font-size:26px;font-weight:400}
+.menu li a:hover{color:#E3CDBA}
+.menu .legal{justify-content:center}
+/* Fuß: ganz klein der Absender */
+.foot .von{margin-top:22px;font-family:var(--klein);font-size:11px;letter-spacing:0;opacity:.55}
+.foot .von a{color:inherit}
