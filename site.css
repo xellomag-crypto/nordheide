@@ -729,3 +729,7 @@ button{background:none;border:0;padding:0;cursor:pointer}
 .menu li a{font-size:30px;padding:9px 0}
 @media (min-width:1024px){.bar .center .wort,.menu .top .center .wort{font-size:28px}.menu li a{font-size:38px}}
 .menu .top .center .wort{font-family:var(--titel);font-size:26px}
+/* Menüpunkte nie größer als die Wortmarke: fein, gleichmäßig */
+.menu li a{font-size:22px;padding:8px 0;line-height:1.25}
+.menu .top .center .wort{font-size:26px}
+@media (min-width:1024px){.menu li a{font-size:24px}.menu .top .center .wort{font-size:28px}}
