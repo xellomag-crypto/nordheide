@@ -602,3 +602,92 @@ button{background:none;border:0;padding:0;cursor:pointer}
 .folge-kopf .ort{text-align:right;font-size:15px;line-height:1.3;color:var(--soft);padding-bottom:3px}
 .folge.aus-liebe .folge-kopf .rub-gross{color:#E3CDBA}
 .folge.aus-liebe .folge-kopf .ort{color:#CFC4BC}
+
+/* =========================================================
+   NORDHEIDE · eigene Schriften und Desktop-Magazin
+   Playfair Display für Titel, Newsreader für den Lesetext, Inter klein für Angaben.
+   ========================================================= */
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/playfair-display-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:italic;font-weight:400;font-display:swap;src:url(fonts/playfair-display-latin-400-italic.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/playfair-display-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Playfair Display';font-style:italic;font-weight:500;font-display:swap;src:url(fonts/playfair-display-latin-500-italic.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/inter-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/inter-latin-500-normal.woff2) format('woff2')}
+:root{--titel:'Playfair Display',Georgia,serif;--klein:'Inter',system-ui,sans-serif;--ink:#141110;--paper:#F2EDE5;--erde:#8B5A3C}
+
+/* Titel in Playfair */
+.mag-kopf h1,.folge h2,.folge h3,.titel-kopf h1,.titel-auf b,.naechste h2,.mag-zitat blockquote,.mag-zahl b,.inhalt-kopf h1,.kap-kopf h2,.kap-lead h3,.kap-liste b,.strecke-titel,.folge-kopf .rub-gross,.satz h3,.folge-zitat,.vorspann,.bar .center .wort,.steckbrief dd{font-family:var(--titel);font-weight:400}
+.mag-kopf h1,.titel-kopf h1,.inhalt-kopf h1{letter-spacing:-.015em}
+.satz p.initial::first-letter{font-family:var(--titel);font-weight:400}
+.vorspann{line-height:1.3}
+/* Kleine Angaben in Inter, ruhig, nie gesperrt in Versalien */
+.autorzeile,.folge-kopf .ort,.folge .zur,.steckbrief dt,.strecke-kopf .zahl,.wisch,.kap-kopf .anz,.inhalt .anz,.heftzeile,.naechste .los,.mag-zitat figcaption,.rubrik .snr{font-family:var(--klein);font-style:normal;letter-spacing:0}
+.autorzeile,.folge .zur{font-size:13px}
+.folge-kopf .ort{font-size:13px}
+
+@media (min-width:1024px){
+ :root{--col:680px}
+ .bar{padding-left:48px;padding-right:48px}
+
+ /* ---------- Story: Eröffnung als Doppelseite ---------- */
+ .mag{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+ .mag>*{grid-column:1/-1}
+ .mag>.mag-open,.mag>.mag-open.quer{grid-column:1;grid-row:1;height:100svh;max-height:none;aspect-ratio:auto}
+ .mag>.mag-open+.wrap{grid-column:2;grid-row:1;align-self:center;padding:120px 56px 80px 56px}
+ .mag>.mag-open+.wrap .col{max-width:520px;margin:0;padding-top:0}
+ .mag-kopf h1{font-size:clamp(52px,5.2vw,92px)!important;line-height:1}
+ .vorspann{font-size:26px}
+ .mag>.wrap:nth-of-type(n+2) .satz{max-width:var(--col)}
+ .satz p{font-size:19px;line-height:1.62}
+ /* Zitat und Zahl ragen aus der Spalte, wie im Heft */
+ .mag-zitat{margin-left:-140px;margin-right:-140px;text-align:center}
+ .mag-zitat::before{margin-left:auto;margin-right:auto;width:fit-content}
+ .mag-zitat blockquote{font-size:52px;line-height:1.08}
+ .mag-zahl{margin-left:-140px;margin-right:-140px;grid-template-columns:auto 1fr;column-gap:40px}
+ .mag-zahl b{font-size:140px}
+ .mag-zahl span{font-size:22px;max-width:22em}
+ .einzel .bild,.einzel.clip .bild{aspect-ratio:auto;height:86svh}
+ .einzel figcaption{max-width:var(--col);margin:0 auto;padding-left:0;padding-right:0}
+ .bahn figure{flex-basis:31%}
+ .strecke-titel{margin-left:max(48px,calc((100vw - 1180px)/2));font-size:48px}
+ .steckbrief{max-width:var(--col)}
+ /* Nächste Story: Bild und Titel nebeneinander */
+ .naechste>a:first-child{display:grid;grid-template-columns:7fr 5fr;align-items:end}
+ .naechste .bild{aspect-ratio:auto!important;height:70svh}
+ .naechste .txt{margin:0!important;padding:56px!important}
+ .naechste h2{font-size:56px}
+
+ /* ---------- Startseite: Stories als Doppelseiten ---------- */
+ .folgen .col{max-width:1180px}
+ .folge{margin-top:120px}
+ .folge>a{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);column-gap:56px;align-content:start}
+ .folge>a>*{grid-column:2}
+ .folge>a>.folge-kopf{grid-column:1/-1}
+ .folge>a>.bild{grid-column:1;grid-row:2/span 8;align-self:start}
+ .folge>a>h2{margin-top:0;align-self:start}
+ .folge.hoch>a{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+ .folge.hoch>a>*{grid-column:1}
+ .folge.hoch>a>.bild{grid-column:2}
+ .folge.hoch>a>.folge-kopf{grid-column:1/-1}
+ .folge.hoch .bild{aspect-ratio:4/5;max-height:80svh}
+ .folge h2{font-size:clamp(40px,3.6vw,60px)}
+ .folge .lede{font-size:19px}
+ .folge .zur{max-width:420px}
+ .folge-kopf .rub-gross{font-size:44px}
+ .folge.aus-liebe{padding:48px}
+ .paar-reihe{grid-template-columns:repeat(2,minmax(0,1fr));gap:56px}
+ .paar .bild{aspect-ratio:4/5}
+ .paar h3{font-size:32px}
+ .titel-kopf h1{font-size:132px}
+
+ /* ---------- Inhalt: Kapitel als Doppelseiten ---------- */
+ .inhalt-seite{max-width:1180px}
+ .inhalt-kopf h1{font-size:150px}
+ .inhalt{max-width:680px}
+ .kap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);column-gap:56px}
+ .kap>.kap-kopf,.kap>.kap-satz{grid-column:1/-1}
+ .kap-lead{grid-column:1;margin-top:30px}
+ .kap-liste{grid-column:2;margin-top:30px;align-self:start}
+ .kap-lead .full{aspect-ratio:3/2}
+ .kap-kopf h2{font-size:72px}
+}
